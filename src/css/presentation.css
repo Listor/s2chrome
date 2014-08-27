@@ -1,0 +1,33 @@
+.highlight {
+	background-color: #C2215F;
+}
+
+.todo {
+	background-color: red;
+	color: green;
+}
+
+pre code.small {
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.controls-window {
+	display: none;
+	width: 280px;
+	height: 200px;
+	border: 2px solid white !important;
+	background-color: black;
+	top: -44%;
+	right: 50%;
+	position: absolute;
+	opacity: 0.4;
+	font-size: 0.5em !important;
+	overflow-y: auto;
+	text-align: left;
+	padding-left: 20px !important;
+}
+
+img {
+	width: 67%;
+}

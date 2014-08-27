@@ -1,0 +1,62 @@
+#loading {
+	margin: 0 auto;
+	position: relative;
+	top: 47%;
+	text-align: center;
+}
+
+body {
+	font-size: 2em;
+}
+
+#controls #panel {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#controls .time {
+	margin-top: 0.25em;
+	text-align: center;
+	font-size: 2em;
+}
+
+#chat-input,
+#presentation,
+#controls {
+	display: none;
+}
+
+#controls button {
+	font-size: 1.7em;
+}
+
+.reveal aside.controls.showmeImportant {
+	display: block !important;
+}
+
+.controls,
+.progress {
+	display: none !important;
+}
+
+.next-slide {
+	text-align: center;
+}
+
+.notes {
+	color: #FC8C84;
+}
+
+#presentation {
+	height: auto;
+	position: relative;
+}
+
+#presentation .frame {
+	width: 100%;
+	height: 100%;
+}
+
+.reveal #presentation .slides {
+	top: 19%;
+}

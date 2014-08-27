@@ -1,0 +1,274 @@
+<div class="controls-window"></div>
+<section>
+	<h1>Chrome Extensions</h1>
+	<h3>Way too <span class="highlight">easy</span> for you guys</h3>
+	<p>
+		<small>Created by <a href="https://github.com/Listor">Michael Ehrich</a></small>
+	</p>
+</section> 
+<section>
+	<section>
+		<h1>Why Chrome ??</h1>
+		<h3>Because i'm lazy !</h3>
+		<div class="notes">Why did I create those extensions</div>
+	</section>
+	<section>
+		Lots of emails with fileshare paths starting with<br/><br/>
+		<h3>smb://give/me/documents/on/our/server</h3>
+	</section>
+	<section>
+		<h3>Manual Steps</h3>
+		<ol>
+			<li>Select Path</li>
+			<li>Press Strg+C</li>
+			<li>Paste into Explorer Address Bar</li>
+			<li>Remove the leading smb:</li>
+			<li>Change every slash to a backslash</li>
+			<li>Press Enter</li>
+		</ol>
+	</section>
+	<section>
+		<h3>First <span class="highlight">approach</span> was a php converter</h3>
+		localhost/path.php?replace=smb://annoying/smb/path<br/><br/>
+		Output: \\nicepath\i\can\copy
+	</section>
+	<section>
+		<h3>There must be a cheaper way with less work !</h3><br/><h3>Maybe in the <span class="highlight">Browser</span> ??</h3>
+	</section>
+	<section>
+		<h1>Idea born!</h1>
+		<h3>Inspired by <span class="highlight">LastPass</span></h3>
+	</section>
+	<section>
+		<h3>So I created <span class="highlight">rightShare</span></h3>
+		My first chrome extension<br/>which I prestened to the team at frankfurt
+	</section>
+	<section>
+		<h3>long story short</h3>
+		they liked it and i got coaxed into this<br/><br/>
+		thx chris :D
+	</section>
+</section>  	 		
+<section>
+	<h1>To the Point!</h1>
+	<h3>How can I create a chrome extension?</h3>
+</section>
+<section>
+	<section>
+		<h3>Let's go to chrome://extensions</h3>
+		and enable <span class="highlight">"developer mode"</span>
+	</section>
+	<section>
+		<h3>Now load Unpacked Extension !</h3>
+		Basically HTML / CSS / JS
+	</section>
+	<section>
+		<h1>Structure</h1>
+	</section>
+	<section>
+		<h3>Filesystem</h3>
+		Pretty much free but you need that manifest
+		<pre><code data-trim>
+\css
+\images
+\js
+\locale
+\views
+	manifest.json
+		</code></pre>
+	</section>
+	<section>
+		<h3>manifest.json</h3>
+		<pre><code data-trim class="small">
+{
+    "manifest_version": 2,
+    "name": "__MSG_appTitle__",
+    "description": "__MSG_appDesc__",
+    "version": "0.6",
+    "background": {
+        "page": "views/background.html"
+    },
+    "browser_action": {
+        "default_title": "__MSG_appTitle__",
+        "default_icon": "images/icon128.png",
+        "default_popup": "views/popup.html"
+    },
+    "permissions": ["tabs", "contextMenus", "http://*/*"],
+    "icons": {
+        "128": "images/icon128.png",
+        "16": "images/icon16.png"
+    },
+    "default_locale": "en",
+    "content_scripts": [
+        {
+            "matches": ["http://*/*"],
+            "js": [
+                        "js/jquery-2.1.0.min.js",
+                        "js/api.js",
+                        "js/content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}			
+		</code></pre>		
+	</section>
+	<section>
+		<h3>break it down</h3>
+		Browser Action (Icons right Corner)<br/>
+		<ol class="left">
+			<ul>title</ul>
+			<ul>icon</ul>
+			<ul>popup (html)</ul>
+		</ol>
+	</section>
+	<section>
+		<h3>permissions</h3>
+		In what context is the Script executed ?<br/>
+		ContextMenu, <span class="highlight">Tabs</span>, http, https ...
+	</section>
+	<section>
+		<h3>Content Scripts</h3>
+		<div class="notes">2 min - matches (scope), no version conflict</div>
+		Are injected into the page but executed <span class="highlight">isolated</span><br/>
+		run_at<br/>
+		<ol>
+			<ul>document_start</ul>
+			<ul>document_end</ul>
+			<ul>document_idle</ul>
+		</ol>
+	</section>
+	<section>
+		<h3>Event Pages</h3>
+		Background<br/>
+		Trigger some stuff / keep states / do crazy stuff
+	</section>
+	<section>
+		<h3>Extension Location (Usually)</h3> 
+		\Users\UserName\AppData\Local\Google\Chrome\User Data\Default\Extensions
+	</section>
+	<section>
+		<h3>All extensions</h3>on your system are <span class="highlight">unpacked</span> and <span class="highlight">readable</span>
+		<div class="notes">2 min - sneak into lastpass</div>
+	</section>
+</section>
+<section>
+	<section>
+		<h1>Examples !</h1>
+	</section>
+	<section>
+		<h3>rightShare</h3>
+		<ol>
+			<ul>Tech: JS</ul>
+			<ul>Reads every tab and looks for fileshare paths</ul>
+			<ul>Context menu to convert selected area</ul>
+		</ol>
+		<div class="notes">2 min - at document end</div>
+	</section>
+	<section>
+		<h3>rightShare</h3>
+		<img src="img/process-rightshare.png"/>
+	</section>
+	<section>
+		<h3>s2 Prime</h3>
+		<ol>
+			<ul>Tech: JS, PHP</ul>
+			<ul>Connects to Prime and <span class="highlight">accumulates your hours</span></ul>
+			<ul>Tells you if you are green or red with your hours</ul>
+			<ul>Needs a Blue Ant Upgrade :D</ul>
+		</ol>
+	</section>
+	<section>
+		<h3>s2 Prime</h3>
+		<img src="img/process-prime.png"/>
+	</section>
+	<section>
+		<h3>RTC Control</h3>
+		<div class="notes">2 min - inspired by ben foxall futurejs</div>
+		<ol>
+			<ul>Tech: JS, Reveal.js, WebRTC</ul>
+			<ul>Controls <span class="highlight">THIS</span> presentation</ul>
+			<ul>Can connect with Chrome, Firefox and Opera</ul>
+		</ol>		
+	</section>
+	<section data-state="hideUsers">
+		<h3>RTC Control</h3>
+		<img src="img/process-rtc.png"/>
+	</section>
+	<section data-state="showUsers">
+		<h3>RTC Control</h3>
+		Can I connect too ? Let's try !<br/>
+		<span class="highlight">http://tinyurl.com/s2rtc</span>
+	</section>
+</section>
+<section data-state="hideUsers">
+	<h1>What Else ?</h1>
+</section>
+<section>
+	<section>
+		<h1>Chrome Apps</h1>
+		<h3>Just a line of code</h3>
+	</section>
+	<section>
+		<h3>manifest.json</h3>
+		<pre><code data-trim class="small">
+{
+   "app": {
+      "background": {
+         "scripts": [ "background.js" ]
+      }
+   },
+   "offline_enabled": true,
+}		
+		</code></pre>				
+	</section>
+	<section>
+		<h3>Examples</h3>
+		Google Keep<br/>
+		Wunderlist
+	</section>
+	<section>
+		<h1>App Shortcuts</h1>
+		<h3>A few lines</h3>
+	</section>
+	<section>
+		<h3>manifest.json</h3>
+		<pre><code data-trim class="small">
+{
+   "app": {
+      "launch": {
+         "web_url": "https://www.mycrazyurl.com/"
+      },
+      "urls": [ "*://www.mycrazyurl.com/" ]
+   }
+}	
+		</code></pre>			
+	</section>
+</section>
+<section>
+	<h1>Hosting</h1>
+</section>
+<section>
+	<section>
+		<h3>All apps need to be hosted in the Chrome Web Store</h3>
+	</section>
+	<section>
+		<h3>25$</h3>
+		Developer Dashboard<br/>
+		http://tinyurl.com/s2dashboard
+	</section>
+	<section>
+		<h3>You can make the extension available for</h3>
+		specific <span class="highlight">Google Groups</span> or everyone
+	</section>
+</section>
+<section>
+	<h3>Where can I get all this Stuff ?</h3>
+</section>
+<section>
+	<h3><span class="highlight">http://tinyurl.com/s2git</span></h3>
+</section>
+<section>
+	<h1>THX !</h1>
+	<h3>Find the Tomatoes under your seat</h3>
+</section>

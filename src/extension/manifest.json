@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "RTC Control",
+    "description": "This extension creates a WebRTC connection between the extension and any other device.",
+    "version": "0.8.3",
+    "background": {
+       	"scripts": [
+       					"js/jquery-2.1.1.min.js",
+                        "js/api.js",
+       					"js/background.js"
+                    ],
+       	"persistent": true
+    },
+    "browser_action": {
+        "default_title": "RTC Control",
+        "default_icon": "images/icon128.png",
+        "default_popup": "views/popup.html"
+    },
+    "permissions": ["tabs", "http://*/*"],
+    "icons": {
+        "128": "images/icon128.png",
+        "16": "images/icon16.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*"],
+            "js": [
+                        "js/jquery-2.1.1.min.js",
+                        "js/content.js",
+                        "js/api.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
