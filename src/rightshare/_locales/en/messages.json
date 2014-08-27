@@ -1,0 +1,26 @@
+{
+    "appTitle": {
+        "message":  "RightShare"
+    },
+    "appDesc": {
+        "message":  "This extension converts MacOS shares to Win shares and vice versa."
+    },
+    "menuTitle": {
+        "message":  "Convert + Copy Path"
+    },
+    "convertedPaths": {
+        "message":  "Converted Paths"
+    },
+    "manualConversion": {
+        "message":  "Manual conversion"
+    },
+    "result": {
+        "message":  "Result"
+    },
+    "manualConvert": {
+        "message":  "Convert"    
+    },
+    "refresh": {
+        "message":  "Refresh Paths"
+    }
+}

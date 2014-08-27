@@ -1,0 +1,32 @@
+{
+    "appTitle": {
+        "message":  "s2 PRIME"
+    },
+    "appDesc": {
+        "message":  "This extension counts your PRIME hours"
+    },
+    "refresh": {
+        "message":  "Refresh Time"
+    },
+    "loading": {
+        "message":  "Loading..."
+    },
+    "optionsDesc": {
+        "message":  "All data is stored in the localStorage"
+    },
+    "userName": {
+        "message":  "Username"
+    }, 
+    "passWord": {
+        "message":  "Password"
+    }, 
+    "saveOptions": {
+        "message":  "Save Settings"
+    }, 
+    "savedOptions": {
+        "message":  "Settings saved successfully..."
+    },
+    "fillOptionsDesc": {
+        "message":  "Please enter your Username and Password."
+    }              
+}

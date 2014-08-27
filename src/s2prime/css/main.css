@@ -1,0 +1,35 @@
+.popup {
+  width: 200px;
+  font-size: 11px;
+  font-family: "Tahoma"; }
+  .popup input {
+    font-size: inherit; }
+  .popup .title {
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    font-size: 12px; }
+  .popup .refreshBox {
+    margin-top: 10px;
+    cursor: pointer; }
+    .popup .refreshBox #refresh {
+      position: relative;
+      top: -3px;
+      margin-right: 2px; }
+  .popup .refresh {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer; }
+  .popup .refresh {
+    background-image: url("chrome-extension://__MSG_@@extension_id__/images/refresh.png"); }
+  .popup iframe {
+    border: 0px;
+    width: 100px;
+    height: 25px; }
+  .popup #time {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #66bb66; }
+    .popup #time.negative {
+      color: #dd0000; }

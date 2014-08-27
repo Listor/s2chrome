@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "__MSG_appTitle__",
+    "description": "__MSG_appDesc__",
+    "version": "0.6",
+    "background": {
+        "page": "views/background.html"
+    },
+    "browser_action": {
+        "default_title": "__MSG_appTitle__",
+        "default_icon": "images/icon128.png",
+        "default_popup": "views/popup.html"
+    },
+    "permissions": ["tabs", "contextMenus", "http://*/*"],
+    "icons": {
+        "128": "images/icon128.png",
+        "16": "images/icon16.png"
+    },
+    "default_locale": "en",
+    "content_scripts": [
+        {
+            "matches": ["http://*/*"],
+            "js": [
+                        "js/jquery-2.1.0.min.js",
+                        "js/api.js",
+                        "js/content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="../css/main.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="../js/api.js"></script>
+        <script type="text/javascript" src="../js/popup.js"></script>
+    </head>
+    <body>
+        <div class="popup" >
+            <div>
+                <img id="logged_in" src="../images/icon16.png" /> <div class="title" ><span id="appTitle" class="msg"></span></div>
+            </div>
+            <div class="refreshBox" >
+                <span id="refresh" class="msg"></span><div class="refresh" ></div>
+            </div>
+            <div id="paths" >
+                <span id="convertedPaths" class="msg"></span>:<br/>
+                <div id="pathsResult" ></div>
+            </div>
+            <div id="manual" >
+                <span id="manualConversion" class="msg"></span>:<br/>
+                <input type="text" id="manualPath" name="manualPath" > <input type="button" value="" id="manualConvert" name="manualConvert" class="msg" ><br/><br/>
+                <span id="result" class="msg"></span>:<br/>
+                <div id="manualResult" class="copyValue" ></div><div class="copy" ></div>
+            </div>
+        </div>
+    </body>
+</html>

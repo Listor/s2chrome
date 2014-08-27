@@ -1,0 +1,49 @@
+.popup {
+  width: 500px;
+  font-size: 11px;
+  font-family: "Tahoma"; }
+  .popup input {
+    font-size: inherit; }
+  .popup a,
+  .popup a:hover,
+  .popup a:visited,
+  .popup a:active {
+    color: #0000ee; }
+  .popup .title {
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    font-size: 12px; }
+  .popup #pathsResult .path {
+    position: relative;
+    margin-bottom: 10px; }
+    .popup #pathsResult .path .copyValue {
+      display: inline-block;
+      width: 460px; }
+  .popup #paths,
+  .popup #manual {
+    position: relative;
+    margin-top: 10px; }
+  .popup #manualResult {
+    display: inline-block; }
+  .popup #manualPath {
+    width: 350px; }
+  .popup .copyValue {
+    cursor: pointer; }
+  .popup .refreshBox {
+    margin-top: 10px;
+    cursor: pointer; }
+    .popup .refreshBox #refresh {
+      position: relative;
+      top: -3px;
+      margin-right: 2px; }
+  .popup .copy,
+  .popup .refresh {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer; }
+  .popup .copy {
+    background-image: url("chrome-extension://__MSG_@@extension_id__/images/clipboard.png"); }
+  .popup .refresh {
+    background-image: url("chrome-extension://__MSG_@@extension_id__/images/refresh.png"); }
